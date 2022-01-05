@@ -14,7 +14,7 @@ export class SaleFormComponent {
     city: [null, Validators.required],
     state: [null, Validators.required],
     postalCode: [null, Validators.compose([
-      Validators.required, Validators.minLength(5), Validators.maxLength(5)])
+      Validators.required, Validators.minLength(4), Validators.maxLength(4)])
     ],
   });
 
