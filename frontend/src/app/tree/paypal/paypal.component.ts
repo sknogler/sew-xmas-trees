@@ -35,8 +35,13 @@ export class PaypalComponent {
     }
 
     async onSubmit(): Promise<void> {
-        if (this.tree) {
-            await this.backendService.buyTree(this.tree);
+        try {
+            if (this.tree) {
+                this.backendService.buyTree(this.tree);
+                this.router.navigate(['*']);
+            }
+        } catch (e) {
+            console.log(e);
         }
     }
 }
