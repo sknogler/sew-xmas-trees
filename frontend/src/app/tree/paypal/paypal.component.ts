@@ -12,7 +12,9 @@ import {BackendService, ITree} from "../../shared/backend.service";
 export class PaypalComponent {
 
     paypalForm = this.fb.group({
-        email: [null, Validators.required],
+        email: [null, Validators.compose([
+            Validators.required, Validators.email])
+        ],
         password: [null, Validators.required],
     });
 

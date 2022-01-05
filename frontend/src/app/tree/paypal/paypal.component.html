@@ -11,6 +11,9 @@
                         <mat-error *ngIf="paypalForm.controls['email'].hasError('required')">
                             Email is <strong>required</strong>
                         </mat-error>
+                        <mat-error *ngIf="paypalForm.controls['email'].hasError('email')">
+                            Email is <strong>invalid</strong>
+                        </mat-error>
                     </mat-form-field>
                 </div>
             </div>
