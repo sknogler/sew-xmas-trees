@@ -1,4 +1,11 @@
-<p>
-    Display data of tree #{{tree.id}}
-</p>
-<app-sale-form></app-sale-form>
+<div *ngIf="tree">
+    <p>
+        Display data of tree #{{tree.id}}
+    </p>
+    <app-sale-form></app-sale-form>
+</div>
+<div *ngIf="!tree">
+    <p>
+        Please choose a tree first in order to finish your order!
+    </p>
+</div>
