@@ -18,6 +18,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { SaleFormComponent } from './tree/sale-form/sale-form.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
+import { PaypalComponent } from './tree/paypal/paypal.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MatRadioModule } from '@angular/material/radio';
     TreeListComponent,
     TreeDisplayComponent,
     SaleComponent,
-    SaleFormComponent
+    SaleFormComponent,
+    PaypalComponent
   ],
     imports: [
         BrowserModule,
