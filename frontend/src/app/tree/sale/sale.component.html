@@ -1,7 +1,11 @@
 <div *ngIf="tree">
-    <p>
-        Display data of tree #{{tree.id}}
-    </p>
+    <mat-card>
+        <p>Tree #{{tree.id}}:</p>
+        <ul>
+            <li>Height: {{tree.heightMeters}}</li>
+            <li>Price: {{tree.price}}€</li>
+        </ul>
+    </mat-card>
     <app-sale-form></app-sale-form>
 </div>
 <div *ngIf="!tree">
