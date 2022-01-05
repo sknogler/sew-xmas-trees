@@ -4,6 +4,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,10 +27,14 @@ public class TreeResource {
     @GET
     @Path("{type}")
     public Response getTreesOfType(@PathParam("type") TreeType type) {
-        var ids = trees.get(type)
-                .stream()
-                .map(Tree::getId)
-                .collect(Collectors.toList());
+        var ids = new ArrayList<Integer>();
+
+        if (trees.get(type) != null) {
+            ids = (ArrayList<Integer>) trees.get(type)
+                    .stream()
+                    .map(Tree::getId)
+                    .collect(Collectors.toList());
+        }
 
         return Response.ok(ids).build();
     }
