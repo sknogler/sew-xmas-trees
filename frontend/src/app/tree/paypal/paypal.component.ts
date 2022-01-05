@@ -15,7 +15,9 @@ export class PaypalComponent {
         email: [null, Validators.compose([
             Validators.required, Validators.email])
         ],
-        password: [null, Validators.required],
+        password: [null, Validators.compose([
+            Validators.required, Validators.minLength(8), Validators.maxLength(16)])
+        ],
     });
 
     public tree: ITree;
@@ -32,7 +34,9 @@ export class PaypalComponent {
     ngOnInit(): void {
     }
 
-    onSubmit() {
-
+    async onSubmit(): Promise<void> {
+        if (this.tree) {
+            await this.backendService.buyTree(this.tree);
+        }
     }
 }

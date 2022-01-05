@@ -24,6 +24,9 @@
                         <mat-error *ngIf="paypalForm.controls['password'].hasError('required')">
                             Password is <strong>required</strong>
                         </mat-error>
+                        <mat-error *ngIf="paypalForm.controls['password'].hasError">
+                            Password is must be between 8 and 16 characters
+                        </mat-error>
                     </mat-form-field>
                 </div>
             </div>
