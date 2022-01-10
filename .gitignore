@@ -38,4 +38,7 @@ nb-configuration.xml
 # Local environment
 .env
 
+frontend/.angular/
+frontend/node_modules/
+frontend/node_modules/
 frontend/node_modules/
